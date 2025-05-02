@@ -1,0 +1,18 @@
+[submodule "project_kernel/linux"]
+	path = project_kernel/linux
+	url = https://github.com/torvalds/linux.git
+[submodule "project_kernel_tiny/linux"]
+	path = project_kernel_tiny/linux
+	url = https://github.com/torvalds/linux.git
+[submodule "project_clang/llvm-project"]
+	path = project_clang/llvm-project
+	url = https://github.com/llvm/llvm-project.git
+[submodule "project_gprolog/gprolog"]
+	path = project_gprolog/gprolog
+	url = https://github.com/didoudiaz/gprolog.git
+[submodule "project_menu/menu"]
+	path = project_menu/menu
+	url = https://salsa.debian.org/debian-menu-team/menu.git
+[submodule "project_kernel_llvm/linux"]
+	path = project_kernel_llvm/linux
+	url = https://github.com/torvalds/linux.git
