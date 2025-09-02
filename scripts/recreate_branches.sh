@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # List of projects to create branches for
-PROJECTS=("clang" "kernel_tiny" "kernel" "libsodium" "rust_small" "tinycc" "verifier_client" "xz_tar" "gprolog" "hello" "ipxe" "menu" "scheme48" "neovim")
+PROJECTS=("clang" "kernel" "kernel_tiny" "kernel_llvm" "libsodium" "rust_small" "tinycc" "verifier_client" "xz_tar" "gprolog" "hello" "ipxe" "menu" "scheme48" "neovim")
 
 # For the scalar projects, also add their variantes _j1 .. _j8 to PROJECTS
 SCALAR_PROJECTS=("verifier_client" "xz_tar")
@@ -13,7 +13,7 @@ done
 
 # Checkout main and pull latest changes
 echo "Updating main branch..."
-git checkout main
+git checkout main 
 git pull origin main
 
 # Remove local project branches
