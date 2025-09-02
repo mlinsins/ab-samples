@@ -1,1 +1,0 @@
-Downloaded from https://download.libsodium.org/libsodium/releases/libsodium-1.0.20-stable.tar.gz
