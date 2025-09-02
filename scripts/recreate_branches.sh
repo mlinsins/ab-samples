@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # List of projects to create branches for
-PROJECTS=("clang" "kernel_tiny" "kernel" "libsodium" "rust_small" "tinycc" "verifier_client" "xz_tar" "gprolog" "hello" "ipxe" "menu" "scheme48" "neovim")
+PROJECTS=("clang" "kernel" "kernel_tiny" "kernel_llvm" "libsodium" "rust_small" "tinycc" "verifier_client" "xz_tar" "gprolog" "hello" "ipxe" "menu" "scheme48" "neovim")
 
 # For the scalar projects, also add their variantes _j1 .. _j8 to PROJECTS
 SCALAR_PROJECTS=("verifier_client" "xz_tar")
@@ -13,8 +13,8 @@ done
 
 # Checkout main and pull latest changes
 echo "Updating main branch..."
-git checkout main
-git pull origin main
+git checkout artifact-eval
+git pull origin artifact-eval
 
 # Remove local project branches
 echo "Removing local project branches..."
@@ -30,11 +30,11 @@ for project in "${PROJECTS[@]}"; do
     echo "Creating branch ${branch_name}..."
         
     # Create new branch from main
-    git checkout -b "$branch_name" main
+    git checkout -b "$branch_name" artifact-eval
     
     # Remove all files except .github, scripts, and the project folder
     git rm -rf .
-    git checkout main -- .github scripts "project_${project}" .gitmodules .gitignore
+    git checkout artifact-eval -- .github scripts "project_${project}" .gitmodules .gitignore
 
     # Commit changes
     git add .github scripts "project_${project}" .gitmodules .gitignore
@@ -45,6 +45,6 @@ for project in "${PROJECTS[@]}"; do
 done
 
 # Return to main branch
-git checkout main
+git checkout artifact-eval
 
 echo "Branch recreation completed!"
